@@ -1,0 +1,2 @@
+population_size,generations,elite_size,tournament_size,crossover_rate,mutation_rate,construct_alpha,construct_beta,close_prob,temperature,max_steps
+160,180,19,2,0.432591268,0.610768446,0.831968822,0.804562617,0.027575611,1.252181045,35

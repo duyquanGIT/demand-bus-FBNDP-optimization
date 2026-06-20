@@ -1,0 +1,35 @@
+# Python Caches and Bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env
+
+# Editor & IDE Configs
+.vscode/
+.idea/
+.vs/
+*.suo
+*.user
+*.userossc
+*.sln
+*.docstates
+
+# System Temporary Files
+Thumbs.db
+EHthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.tmp
+*.temp
+*~

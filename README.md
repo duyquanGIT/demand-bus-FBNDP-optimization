@@ -5,7 +5,7 @@ This repository contains the complete code, dataset, and research outputs for th
 * **Author:** Trần Duy Quân (Student ID: IELSIU21046)
 * **Supervisor:** Dr. Pham Huynh Tram
 * **Institution:** School of Systems Engineering, International University, Vietnam National University - Ho Chi Minh City (VNU-HCM)
-* **Main Thesis Document:** [146_Trần Duy Quân_IELSIU21046_TS. Phạm Huỳnh Trâm.pdf](file:///./146_Trần Duy Quân_IELSIU21046_TS. Phạm Huỳnh Trâm.pdf)
+* **Main Thesis Document:** [Demand-Weighted Optimization of First-Mile Feeder Bus.pdf](file:///./Demand-Weighted%20Optimization%20of%20First-Mile%20Feeder%20Bus.pdf)
 
 ---
 

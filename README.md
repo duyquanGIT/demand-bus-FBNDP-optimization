@@ -6,6 +6,7 @@ This repository contains the complete code, dataset, and research outputs for th
 * **Supervisor:** Dr. Pham Huynh Tram
 * **Institution:** School of Industrial Engineering and Management, International University, Vietnam National University - Ho Chi Minh City (VNU-HCM)
 * **Main Thesis Document:** [Demand-Weighted Optimization of First-Mile Feeder Bus.pdf](file:///./Demand-Weighted%20Optimization%20of%20First-Mile%20Feeder%20Bus.pdf)
+* For more detail for the problem statement, background context and theoratical foundations of this thesis please find the thesis PDF file.
 
 ---
 

@@ -4,7 +4,7 @@
 
 var POLYGON_ASSET = "projects/charged-city-423909-e5/assets/Pulse_FDNDP_Polygon_Area";
 
-var LINH_XUAN_ASSET  = "projects/charged-city-423909-e5/assets/Pulse-FDNDP-LinhXuan";
+var LINH_XUAN_ASSET = "projects/charged-city-423909-e5/assets/Pulse-FDNDP-LinhXuan";
 var LINH_TRUNG_ASSET = "projects/charged-city-423909-e5/assets/Pulse-FDNDP-LinhTrung";
 var THIRD_WARD_ASSET = "projects/charged-city-423909-e5/assets/Pulse-FDNDP-DongHoa";
 
@@ -26,7 +26,7 @@ var studyArea = ee.FeatureCollection(POLYGON_ASSET).geometry();
 var utm48n = ee.Projection("EPSG:32648");
 
 Map.centerObject(studyArea, 15);
-Map.addLayer(studyArea, {color: "red"}, "VNU Polygon");
+Map.addLayer(studyArea, { color: "red" }, "VNU Polygon");
 
 
 /**** =========================================================
@@ -38,7 +38,7 @@ function loadPoints(asset, wardName) {
     .filter(ee.Filter.notNull(["Longitude", "Latitude"]))
     .filter(ee.Filter.gt("Longitude", 100))
     .filter(ee.Filter.gt("Latitude", 1))
-    .map(function(f) {
+    .map(function (f) {
       return ee.Feature(
         ee.Geometry.Point([
           ee.Number(f.get("Longitude")),
@@ -58,7 +58,7 @@ var householdPoints = loadPoints(LINH_XUAN_ASSET, "Linh Xuan")
   .filterBounds(studyArea);
 
 print("Household proxy points inside VNU:", householdPoints.size());
-Map.addLayer(householdPoints, {color: "black"}, "Household Proxy Points");
+Map.addLayer(householdPoints, { color: "black" }, "Household Proxy Points");
 
 
 /**** =========================================================
@@ -68,8 +68,8 @@ Map.addLayer(householdPoints, {color: "black"}, "Household Proxy Points");
 var bounds = studyArea.bounds().transform(utm48n, 1);
 var coords = ee.List(bounds.coordinates().get(0));
 
-var xs = coords.map(function(c) { return ee.Number(ee.List(c).get(0)); });
-var ys = coords.map(function(c) { return ee.Number(ee.List(c).get(1)); });
+var xs = coords.map(function (c) { return ee.Number(ee.List(c).get(0)); });
+var ys = coords.map(function (c) { return ee.Number(ee.List(c).get(1)); });
 
 var xmin = ee.Number(xs.reduce(ee.Reducer.min()));
 var xmax = ee.Number(xs.reduce(ee.Reducer.max()));
@@ -80,8 +80,8 @@ var xSeq = ee.List.sequence(xmin, xmax.subtract(GRID_SIZE_M), GRID_SIZE_M);
 var ySeq = ee.List.sequence(ymin, ymax.subtract(GRID_SIZE_M), GRID_SIZE_M);
 
 var grid = ee.FeatureCollection(
-  xSeq.map(function(x) {
-    return ySeq.map(function(y) {
+  xSeq.map(function (x) {
+    return ySeq.map(function (y) {
       x = ee.Number(x);
       y = ee.Number(y);
 
@@ -107,7 +107,7 @@ var grid = ee.FeatureCollection(
  * 4. CONVERT GRID CELLS TO CENTROIDS
  * ========================================================= ****/
 
-var centroidGrid = grid.map(function(f) {
+var centroidGrid = grid.map(function (f) {
   var centroid = f.geometry().centroid(1);
   var centroidUTM = centroid.transform(utm48n, 1);
 
@@ -127,7 +127,7 @@ var centroidGrid = grid.map(function(f) {
 var gridList = centroidGrid.toList(centroidGrid.size());
 
 var indexedGrid = ee.FeatureCollection(
-  ee.List.sequence(1, centroidGrid.size()).map(function(id) {
+  ee.List.sequence(1, centroidGrid.size()).map(function (id) {
     id = ee.Number(id);
     return ee.Feature(gridList.get(id.subtract(1))).set("grid_id", id);
   })
@@ -188,7 +188,7 @@ print("Maximum 500 m local household count:", maxLocalCount);
  * 6. MASS-BALANCED POPULATION DENSITY
  * ========================================================= ****/
 
-var withRatio = sampledGrid.map(function(f) {
+var withRatio = sampledGrid.map(function (f) {
   var localCount = ee.Number(f.get("local_household_proxy_count"));
   var areaKm2 = ee.Number(f.get("grid_area_km2"));
 
@@ -220,7 +220,7 @@ var densityScale = ee.Number(
   )
 );
 
-var finalGrid = withRatio.map(function(f) {
+var finalGrid = withRatio.map(function (f) {
   var ratio = ee.Number(f.get("density_ratio_to_vnu_max"));
   var areaKm2 = ee.Number(f.get("grid_area_km2"));
 
@@ -252,7 +252,7 @@ Map.addLayer(localCountImage, {
   palette: ["white", "yellow", "orange", "red"]
 }, "500 m Household Proxy Count");
 
-Map.addLayer(finalGrid, {color: "blue"}, "Grid Centroids");
+Map.addLayer(finalGrid, { color: "blue" }, "Grid Centroids");
 
 
 /**** =========================================================

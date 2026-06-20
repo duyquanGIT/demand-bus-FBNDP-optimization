@@ -134,6 +134,10 @@ graph TD
 
 ![Figure 7: Research Framework](Pictures/Fig%207.png)
 
+### 💻 Languages & Technologies
+- **Python (3.8+)**: Used for optimization solvers (GA, ACO, and exact Pulse Solver) and preprocessing (TomTom GIS retrieval, logit assignment).
+- **JavaScript (Google Earth Engine API)**: Used for spatial gridding, household filtering, and population density dataset exports (detailed in Appendix A).
+
 ### 1. Preprocessing & GIS Data Retrieval
 * **TomTom API Route Querying (`TomTom_data_retrieve.ipynb`)**: Resolves exact road-network travel distances and travel times. Implements fallback routines (bus mode $\rightarrow$ car mode $\rightarrow$ default mode) and spatial boundaries constraint.
 * **Link Filtering (`Grid_Link_Assignment.ipynb`)**: Eliminates infeasible links (such as isolated road segments or restricted paths) to ensure topological connectivity.
@@ -258,3 +262,15 @@ pip install numpy pandas openpyxl requests shapely pyproj folium tqdm optuna
 8. **Zhen, L., & Gu, W. (2024).** Feeder bus service design under spatially heterogeneous demand. *Transportation Research Part A: Policy and Practice*, 189, 104214. [https://doi.org/10.1016/j.tra.2024.104214](https://doi.org/10.1016/j.tra.2024.104214)
 9. **Su, Y., & Yang, H. (2025).** Enhancing feeder bus service coverage with Multi-Agent Reinforcement Learning: A case study in Hong Kong. *Transportation Research Part E: Logistics and Transportation Review*, 196, 103997. [https://doi.org/10.1016/j.tre.2025.103997](https://doi.org/10.1016/j.tre.2025.103997)
 10. **Huu, D. N., & Ngoc, V. N. (2021).** Analysis study of current transportation status in Vietnam’s urban traffic and the transition to electric two-wheelers mobility. *Sustainability*, 13(10), Article 5577. [https://doi.org/10.3390/su13105577](https://doi.org/10.3390/su13105577)
+
+---
+
+## 👥 Contributors
+* **Trần Duy Quân** - Lead Researcher & Author
+* **Dr. Pham Huynh Tram** - Advisor & Supervisor
+* **ChatGPT (OpenAI)** - Technical assistant for code refinement, debugging, and repository structuring.
+
+---
+
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

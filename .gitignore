@@ -30,6 +30,10 @@ Thumbs.db
 EHthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
-*.tmp
 *.temp
 *~
+
+# Thesis Assets & Local Files
+Pictures/
+*.docx
+

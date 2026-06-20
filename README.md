@@ -32,11 +32,11 @@ The figure below outlines the study area map containing candidate bus stations w
 
 ---
 
-## 📐 Section 4.2 Mathematical Model
+## 📐 Mathematical Model
 
 The Feeder Bus Network Design Problem is formulated mathematically on a graph network using population grids and walkability thresholds.
 
-### 4.2.1 Indices and Sets
+###  Indices and Sets
 * $G = (N, A)$: Directed graph representing the candidate feeder bus network.
 * $N$: Set of nodes (stations) in the transportation network.
 * $s \in N$: Target metro station terminal, where $s = 31$ represents the **National University Metro Station**.
@@ -54,7 +54,7 @@ The Feeder Bus Network Design Problem is formulated mathematically on a graph ne
 * $A_k^2 \subseteq A_2$: Set of Backward links whose forward source link is $k$.
 * $P$: Selected circular feeder bus route.
 
-### 4.2.2 Parameters
+### Parameters
 * $pop_Z$: Total population of the inhabited zone.
 * $\Delta_Z$: Total geographic area of the inhabited zone ($km^2$).
 * $\lambda = \frac{pop_Z}{\Delta_Z}$: Population density of the inhabited zone (persons/$m^2$).
@@ -81,15 +81,15 @@ The Feeder Bus Network Design Problem is formulated mathematically on a graph ne
 * $\Delta_{i,j}$: Grid catchment area assigned to link $(i, j)$:
   $$\Delta_{i,j} = \sum_{g\in Z} \Delta_g \times F_{g,ij}, \quad \forall (i, j) \in A$$
 
-### 4.2.3 Decision Variables
+### Decision Variables
 * $Y_{ij}$: Binary decision variable, equals 1 if directed link $(i, j)$ is selected in the final feeder bus route, and 0 otherwise.
 * $F_{g,ij}$: Binary supporting variable, equals 1 if grid $g$ is assigned to link $(i, j)$, and 0 otherwise.
 
-### 4.2.4 Objective Function
+### Objective Function
 The primary objective of the model is to maximize the total priority index (representing served demographic appeal) accumulated by the selected route:
 $$\max Z = \sum_{(i,j)\in A} PI_{ij} Y_{ij}$$
 
-### 4.2.5 Constraints
+### Constraints
 The path must satisfy the following network topology and operational constraints:
 
 1. **Travel Time Budget Limit**:

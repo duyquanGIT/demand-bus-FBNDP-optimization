@@ -138,18 +138,19 @@ graph TD
 * **TomTom API Route Querying (`TomTom_data_retrieve.ipynb`)**: Resolves exact road-network travel distances and travel times. Implements fallback routines (bus mode $\rightarrow$ car mode $\rightarrow$ default mode) and spatial boundaries constraint.
 * **Link Filtering (`Grid_Link_Assignment.ipynb`)**: Eliminates infeasible links (such as isolated road segments or restricted paths) to ensure topological connectivity.
   
+<p align="center">
+  <img src="Pictures/Fig 9.png" width="32%" alt="Forward Link Type"/>
+  <img src="Pictures/Fig 9(1).png" width="32%" alt="Backward Link Type"/>
+  <img src="Pictures/Fig 9(2).png" width="32%" alt="U-turn Link Type"/>
+  <br>
+  <em>Figure 9: Link Type Description (Forward, Backward, and U-turn link configurations)</em>
+</p>
+
 ![Figure 10: Valid/Invalid Links Screening](Pictures/Fig%2010.png)
 
 ### 2. Demographics Mapping
 * **Grid-to-Link Assignment**: Matches population grid cells from Google Earth Engine to adjacent road segments based on catchment distances.
   
-<p align="center">
-  <img src="Pictures/Fig 9.1.png" width="32%" alt="25m Grid Network"/>
-  <img src="Pictures/Fig 9.2.png" width="32%" alt="50m Grid Network"/>
-  <img src="Pictures/Fig 9.3.png" width="32%" alt="100m Grid Network"/>
-  <br>
-  <em>Figure 9: VNU Polygon Grid Centroids (25m, 50m, and 100m resolutions)</em>
-</p>
 
 ### 3. Hyperparameter Tuning
 * **Optuna Integration**: Automated optimization loops using Tree-structured Parzen Estimators (TPE) to tune heuristic parameters (population counts, crossover/mutation probabilities, elitism ratios) to maximize priority index capture.

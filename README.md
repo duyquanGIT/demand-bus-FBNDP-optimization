@@ -1,9 +1,9 @@
-# Feeder Bus Route Optimization for Metro Station National University (VNU-HCM)
+# Demand-Weighted Optimization of First-Mile Feeder Bus Routes for Metro Station Access: A Case Study of Ho Chi Minh City Metro
 
-This repository contains the complete code, dataset, and research outputs for the undergraduate thesis project: **"Feeder Bus Network Design Optimization for VNU-HCM Study Area"**.
+This repository contains the complete code, dataset, and research outputs for the undergraduate thesis project: **"Demand-Weighted Optimization of First-Mile Feeder Bus Routes for Metro Station Access: A Case Study of Ho Chi Minh City Metro"**.
 
 * **Author:** Trần Duy Quân (Student ID: IELSIU21046)
-* **Supervisor:** TS. Phạm Huỳnh Trâm
+* **Supervisor:** Dr. Pham Huynh Tram
 * **Institution:** School of Systems Engineering, International University, Vietnam National University - Ho Chi Minh City (VNU-HCM)
 * **Main Thesis Document:** [146_Trần Duy Quân_IELSIU21046_TS. Phạm Huỳnh Trâm.pdf](file:///./146_Trần Duy Quân_IELSIU21046_TS. Phạm Huỳnh Trâm.pdf)
 

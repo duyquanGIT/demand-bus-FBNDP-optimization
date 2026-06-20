@@ -2,7 +2,7 @@
 
 This repository contains the complete code, dataset, and research outputs for the undergraduate thesis project: **"Demand-Weighted Optimization of First-Mile Feeder Bus Routes for Metro Station Access: A Case Study of Ho Chi Minh City Metro"**.
 
-* **Author:** Trần Duy Quân (Student ID: IELSIU21046)
+* **Author:** Trần Duy Quân
 * **Supervisor:** Dr. Pham Huynh Tram
 * **Institution:** School of Systems Engineering, International University, Vietnam National University - Ho Chi Minh City (VNU-HCM)
 * **Main Thesis Document:** [Demand-Weighted Optimization of First-Mile Feeder Bus.pdf](file:///./Demand-Weighted%20Optimization%20of%20First-Mile%20Feeder%20Bus.pdf)
